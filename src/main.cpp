@@ -33,13 +33,23 @@ void setup() {
 
   Serial.println(sp.dateTime());
 
-  if (sp.month() == 11){
-    mes = "Novembro";
-  }
+  //if (sp.month() == 11){
+  //  mes = "Novembro";
+  //}
   
-  if(sp.weekday() == 6){
-    diaSemana = "sexta-feira";
-  }
+  //if(sp.weekday() == 6){
+  //  diaSemana = "sexta-feira";
+  //}
+
+
+  //ARRAY
+  const String diasDaSemana[] ={"domingo", "segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado"};
+  
+  diaSemana = diasDaSemana[sp.weekday()-1];
+
+  const String meses[] ={"Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"};
+  
+  mes = meses[sp.month()-1];
 
   //Serial.println(sp.dateTime("d/m/Y H:i:s"));
   //Serial.println(sp.dateTime("\\Ho\\j\\e \\e l"));
